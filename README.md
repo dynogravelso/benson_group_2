@@ -1,6 +1,7 @@
 ## Project Benson
 
 ![](Benson.jpg)
+Image is gone.
 
 ### Back Story
 
