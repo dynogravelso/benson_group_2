@@ -1,0 +1,278 @@
+/* slick standard styles  */
+
+/* Slider */
+
+.slick-slider {
+  position: relative;
+  display: block;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  -webkit-user-select: none;
+   -khtml-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-touch-callout: none;
+  -ms-touch-action: pan-y;
+      touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+  position: relative;
+  display: block;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.slick-list:focus {
+  outline: none;
+}
+
+.slick-list.dragging {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+     -moz-transform: translate3d(0, 0, 0);
+      -ms-transform: translate3d(0, 0, 0);
+       -o-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+}
+
+.slick-track:before,
+.slick-track:after {
+  display: table;
+  content: "";
+}
+
+.slick-track:after {
+  clear: both;
+}
+
+.slick-loading .slick-track {
+  visibility: hidden;
+}
+
+.slick-slide {
+  display: none;
+  float: left;
+  height: 100%;
+  min-height: 1px;
+}
+
+[dir="rtl"] .slick-slide {
+  float: right;
+}
+
+.slick-slide img {
+  display: block;
+}
+
+.slick-slide.slick-loading img {
+  display: none;
+}
+
+.slick-slide.dragging img {
+  pointer-events: none;
+}
+
+.slick-initialized .slick-slide {
+  display: block;
+}
+
+.slick-loading .slick-slide {
+  visibility: hidden;
+}
+
+.slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent;
+}
+
+/* slick theme  */
+
+.slick-slide img {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Slider */
+
+.slick-loading .slick-list {
+  background: #fff url("../img/clear.gif") center center no-repeat;
+}
+
+/* Arrows */
+
+.slick-prev,
+.slick-next {
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  margin-top: -28px;
+  font-size: 0;
+  line-height: 0;
+  color: transparent;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus {
+  color: transparent;
+  background: transparent;
+  outline: none;
+}
+
+.slick-prev:hover:before,
+.slick-prev:focus:before,
+.slick-next:hover:before,
+.slick-next:focus:before {
+  opacity: 1;
+}
+
+.slick-prev.slick-disabled:before,
+.slick-next.slick-disabled:before {
+  opacity: .25;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  margin-top: 2px;
+  font-family: "fontello";
+  font-size: 26px;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1;
+  color: white;
+  opacity: .75;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-prev {
+  left: -7px;
+}
+
+[dir="rtl"] .slick-prev {
+  right: -8px;
+  left: auto;
+}
+
+.slick-prev:before {
+  content: "\e828";
+}
+
+[dir="rtl"] .slick-prev:before {
+  content: "\e827";
+}
+
+.slick-next {
+  right: -8px;
+}
+
+[dir="rtl"] .slick-next {
+  right: auto;
+  left: -7px;
+}
+
+.slick-next:before {
+  content: "\e827";
+}
+
+[dir="rtl"] .slick-next:before {
+  content: "\e828";
+}
+
+/* Dots */
+
+.slick-slider {
+  margin-bottom: 15px;
+}
+
+.slick-dots {
+  bottom: -45px;
+  display: block;
+  width: 100%;
+  padding: 0;
+  text-align: center;
+  list-style: none;
+}
+
+.slick-dots li {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.slick-dots li button {
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  font-size: 0;
+  line-height: 0;
+  color: transparent;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  outline: none;
+}
+
+.slick-dots li button:hover,
+.slick-dots li button:focus {
+  outline: none;
+}
+
+.slick-dots li button:hover:before,
+.slick-dots li button:focus:before {
+  opacity: 1;
+}
+
+.slick-dots li button:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  font-family: "fontello";
+  font-size: 9px;
+  -webkit-font-smoothing: antialiased;
+  line-height: 20px;
+  color: black;
+  text-align: center;
+  content: "\e82d";
+  opacity: .25;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-dots li.slick-active button:before {
+  color: black;
+  opacity: .75;
+}
+
+
+.zoomInOn,.zoomInOff,.zoomOutOn,.zoomOutOff,.closeButton{width:44px;height:45px;display:block;position:absolute;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.zoomInOn,.zoomInOff{background-image:url(../js/lib/pinchzoomer/assets/zoom_in.png);top:10px;right:10px}.zoomOutOn,.zoomOutOff{background-image:url(../js/lib/pinchzoomer/assets/zoom_out.png);top:52px;right:10px}.zoomInOn,.zoomOutOn{opacity:1;cursor:pointer}.zoomInOff,.zoomOutOff{opacity:.3;cursor:auto}
+
