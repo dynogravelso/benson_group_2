@@ -1,0 +1,6 @@
+The folder contains 4 files
+
+1. Home Credit Default.ipynb - The model and exploratory data analysis
+2. awesome.html - The html file for the App
+3. Flask.py - The Flask App file connecting to HTML
+4. The presentation in .pptx
