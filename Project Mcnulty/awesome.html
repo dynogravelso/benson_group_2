@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Prediction Wizard</title>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.2.1/css/bootstrap-slider.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/eonasdan-bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.css" />
+
+
+
+  <style>
+  body {
+   font-family: Verdana,Arial,sans-serif;
+ }
+ h2 {
+   font-size: 1.2em;
+   margin: 60px 0 5px 0;
+   color: gray
+ }
+ .space {
+   margin-bottom: 20 px;
+ }
+ .wrapper {
+   width: 800px;
+   margin-left: auto;
+   margin-right: auto;
+   margin-bottom: 0px;
+ }
+ #bar_chart {
+   margin-bottom: 0 px;
+ }
+ .bar {
+   fill: #FF75A3;
+ }
+ span {
+   color: steelblue;
+ }
+</style>
+</head>
+
+<body>
+
+
+
+  <div class="panel panel-primary" style="width:60%">
+    <div class="panel-heading">
+      <h3 class="panel-title ">Loan Default Probability Predictor</h3>
+    </div>
+    <div class="panel-body">
+
+     <div class="form-group row">
+      <div class="col-sm-10"></div>
+    </div>
+
+    <div class="form-group row">
+      <label for="reqLoanAmt" class="col-sm-4 col-form-label">Requested loan amount</label>
+      <div class="col-sm-8">
+        <b>$10,000 </b> <input id="reqLoanAmt" type="text" data-slider-min="10000" data-slider-max="5000000" data-slider-step="10000" data-slider-value="20000"/><b>$5,000,000</b>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-sm-10"></div>
+    </div>
+
+    <div class="form-group row">
+      <label for="annuityAmt" class="col-sm-4 col-form-label">Annuity amount </label>
+      <div class="col-sm-8">
+        <b>$100 </b> <input id="annuityAmt" type="text" data-slider-min="100" data-slider-max="3000000" data-slider-step="10000" data-slider-value="1000"/><b>$3,000,000</b>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-sm-10"></div>
+    </div>
+
+    <div class="form-group row">
+      <label for="goodsAmt" class="col-sm-4 col-form-label">Goods amount </label>
+      <div class="col-sm-8">
+        <b>$10,000 </b> <input id="goodsAmt" type="text" data-slider-min="10000" data-slider-max="5000000" data-slider-step="10000" data-slider-value="15000"/><b>$5,000,000</b>
+      </div>
+    </div>
+
+ <div class="form-group row">
+      <label for="income" class="col-sm-4 col-form-label">Annual Income </label>
+      <div class="col-sm-8">
+        <b>$10,000 </b> <input id="income" type="text" data-slider-min="10000" data-slider-max="1000000" data-slider-step="5000" data-slider-value="15000"/><b>$1,000,000</b>
+      </div>
+    </div>
+
+
+    <div class="form-group row">
+      <label for="educationL" class="col-sm-4 col-form-label">Applicant Education Level</label>
+      <div class="col-sm-8">
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="education">
+          <label class="custom-control-label" for="education">Completed Higher Education</label>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="form-group row">
+      <label for="dob" class="col-sm-4 col-form-label">Date of Birth (YYYY/MM/DD)</label>
+      <div class="col-sm-8">
+
+        <div class="container">
+          <div class="row">
+            <div class='col-sm-6'>
+              <div class="form-group">
+                <div class='input-group date' id='dob'>
+                  <input type='text' class="form-control" />
+                  <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-time"></span>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="dob" class="col-sm-4 col-form-label">Date of joining recent Employment (YYYY/MM/DD)</label>
+      <div class="col-sm-8">
+
+        <div class="container">
+          <div class="row">
+            <div class='col-sm-6'>
+              <div class="form-group">
+                <div class='input-group date' id='doj'>
+                  <input type='text' class="form-control" />
+                  <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-time"></span>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="dob" class="col-sm-4 col-form-label">KYC docs submitted date (YYYY/MM/DD)</label>
+      <div class="col-sm-8">
+
+        <div class="container">
+          <div class="row">
+            <div class='col-sm-6'>
+              <div class="form-group">
+                <div class='input-group date' id='kyc'>
+                  <input type='text' class="form-control" />
+                  <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-time"></span>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="dob" class="col-sm-4 col-form-label">Date of last phone # change (YYYY/MM/DD)</label>
+      <div class="col-sm-8">
+
+        <div class="container">
+          <div class="row">
+            <div class='col-sm-6'>
+              <div class="form-group">
+                <div class='input-group date' id='phone_change'>
+                  <input type='text' class="form-control" />
+                  <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-time"></span>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+
+    <div class="form-group row">
+      <label for="flag3A" class="col-sm-4 col-form-label">Was Document A provided?</label>
+      <div class="col-sm-8">
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="flag3">
+          <label class="custom-control-label" for="flag3">Yes</label>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="form-group row">
+      <button id="evaluateRisk" type="submit" class="btn btn-primary">Evaluate Default Risk</button>
+    </div>
+
+
+    <div class="row">
+      <label for="prediction" class="col-sm-4 col-form-label">Probability of default </label>
+      <span id="prediction" class="label label-danger">TBD</span>
+    </div>
+
+
+
+
+  </div>
+</div>
+
+
+
+
+
+<!-- Import the libraries: jQuery, d3, d3.slider -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.2.1/bootstrap-slider.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/eonasdan-bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+
+<script>
+
+
+      // With JQuery
+// With JQuery
+$("#reqLoanAmt").slider({
+  tooltip: 'always'
+});
+
+$("#annuityAmt").slider({
+  tooltip: 'always'
+});
+
+$("#goodsAmt").slider({
+  tooltip: 'always'
+});
+
+$("#income").slider({
+  tooltip: 'always'
+});
+
+
+
+$('#dob').datetimepicker({
+  format: 'YYYY/MM/DD',
+  date: '1970/01/01'
+});
+
+$('#doj').datetimepicker({
+  format: 'YYYY/MM/DD',
+  date: '2015/01/01'
+});
+
+$('#kyc').datetimepicker({
+  format: 'YYYY/MM/DD',
+  date: '2018/08/01'
+});
+
+$('#phone_change').datetimepicker({
+  format: 'YYYY/MM/DD',
+  date: '2010/01/01'
+});
+
+<!-- SINGLE BAR CHART -->
+
+<!-- FUNCTION TO GET CHANCE FROM YOUR PREDICTOR WITH AJAX AND CHANGE BAR  HEIGHT -->
+
+$( "#evaluateRisk" ).click(function() {
+  var reqLoanAmt = $('input[id="reqLoanAmt"]').slider('getValue');
+  var annuityAmt = $('input[id="annuityAmt"]').slider('getValue');
+  var goodsAmt = $('input[id="goodsAmt"]').slider('getValue');
+  var income = $('input[id="income"]').slider('getValue');
+  var highEdu = 0;
+  if($('#education').prop('checked')) {
+    highEdu = 1;
+  }
+  dob = $("#dob").find("input").val();
+  var timeDiffDOB = ((new Date(dob)).getTime()-(new Date()).getTime());
+  var diffDaysDOB = Math.ceil(timeDiffDOB / (1000 * 3600 * 24)); 
+
+  doj = $("#doj").find("input").val();
+  var timeDiffDOJ = Math.abs((new Date()).getTime() - (new Date(doj)).getTime());
+  var diffDaysDOJ = Math.ceil(timeDiffDOJ / (1000 * 3600 * 24)); 
+
+
+  kyc = $("#kyc").find("input").val();
+  var timeDiffKYC = ((new Date(kyc)).getTime()-(new Date()).getTime());
+  var diffDaysKYC = Math.ceil(timeDiffKYC / (1000 * 3600 * 24)); 
+
+
+  phone_change = $("#phone_change").find("input").val();
+  var timeDiffpc = ((new Date(phone_change)).getTime()-(new Date()).getTime());
+  var diffDayspc = Math.ceil(timeDiffpc / (1000 * 3600 * 24)); 
+
+
+  var flag3 = 0;
+  if($('#flag3').prop('checked')) {
+    flag3 = 1;
+  }
+
+  var gender= 0;
+
+
+  var credit_term = (annuityAmt/reqLoanAmt);
+  var credit_income_percent = ((reqLoanAmt/income));
+  var ANNUITY_INCOME_PERCENT = ((annuityAmt/income));
+
+  var request_data =
+  "{\"CODE_GENDER\":"+gender+",\"AMT_ANNUITY\":"+annuityAmt+",\"AMT_CREDIT\":"+reqLoanAmt+",\"AMT_GOODS_PRICE\":"+goodsAmt+",\"NAME_EDUCATION_TYPE_Higher education\":"+highEdu+",\"DAYS_BIRTH\":"+diffDaysDOB+",\"DAYS_EMPLOYED\":"+diffDaysDOJ+",\"DAYS_ID_PUBLISH\":"+diffDaysKYC+",\"DAYS_LAST_PHONE_CHANGE\":"+diffDayspc+",\"FLAG_DOCUMENT_3\":"+flag3+",\"CREDIT_TERM\":"+credit_term+",\"AMT_INCOME_TOTAL\":"+income+",\"CREDIT_INCOME_PERCENT\":"+credit_income_percent+"}";
+
+  
+  getPredictionProbability(request_data);
+});
+
+
+function getPredictionProbability(request_data){
+
+  $.ajax({
+   type: "POST",
+   contentType: "application/json; charset=utf-8",
+   url: "/pred",
+   dataType: "json",
+   async: true, 
+   data: request_data,
+   success: function (data) {
+
+     var predicted_value = data["predicted_value"];
+     $("#prediction").text(predicted_value);
+
+   },
+   error: function (result) {
+    alert("error on getting model result:" + result)
+  }
+})
+}
+
+
+<!-- SLIDERS -->
+  
+
+
+</script>
+</body>
+</html>
