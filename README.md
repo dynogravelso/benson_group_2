@@ -2,6 +2,9 @@
 
 ![](Benson.jpg)
 
+### Results
+EDA analysis and recommendations for the use of resources on the promotion of a fundraising tech conference.
+
 #### Project prompt is as shown below:
 
 ### Back Story
