@@ -5,7 +5,7 @@
 ### Results
 Our group decided to make an assumption for the way we promote the group. One fixed group of people to promote the conference in one station at a time over a week long promotional period. Our group formulated an EDA analysis and recommendations for the use of resources on the promotion of a fundraising tech conference.
 
-#### Project prompt is as shown below:
+#### Project prompt is as follows:
 
 ### Back Story
 
