@@ -2,6 +2,8 @@
 
 ![](Benson.jpg)
 
+#### Project prompt is as shown below:
+
 ### Back Story
 
 An email from a potential client:
